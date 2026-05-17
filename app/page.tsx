@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen w-full bg-[#fef9f7] relative flex items-center justify-center px-6">
@@ -17,16 +19,8 @@ export default function Home() {
       {/* Content Layer */}
       <div className="relative z-10 mx-auto max-w-2xl text-center">
 
-        <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
-          Chhotelal
-        </h1>
 
-        <p className="mt-5 text-lg text-muted sm:text-xl">
-          Small name.{" "}
-          <span className="font-medium text-foreground">
-            Big potential.
-          </span>
-        </p>
+        <Image src="/logo.png" alt="Chhotelal Logo" width={300} height={200} className="mx-auto mt-6" />
 
       </div>
 

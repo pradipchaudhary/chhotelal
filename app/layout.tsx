@@ -37,7 +37,7 @@ export default function RootLayout({
       <body
         className={clsx(
           inter.variable,
-          "antialiased text-black bg-white"
+          "antialiased"
         )}
       >
 
