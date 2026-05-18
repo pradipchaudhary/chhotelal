@@ -20,7 +20,14 @@ export default function Home() {
       <div className="relative z-10 mx-auto max-w-2xl text-center">
 
 
-        <Image src="/logo.png" alt="Chhotelal Logo" width={300} height={200} className="mx-auto mt-6" />
+        <Image
+          src="/logo.png"
+          alt="Chhotelal Logo"
+          width={300}
+          height={200}
+          priority
+          className="mx-auto mt-6"
+        />
 
       </div>
 
