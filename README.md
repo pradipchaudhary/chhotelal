@@ -41,30 +41,6 @@ chhotelal/
 
 ---
 
-## ⚙️ Getting Started
-
-### Prerequisites
-
-Make sure you have the following installed:
-
-* Node.js / relevant runtime
-* Package manager (npm, yarn, etc.)
-
-### Installation
-
-```bash
-git clone https://github.com/pradipchaudhary/chhotelal.git
-cd chhotelal
-npm install
-```
-
-### Run the Project
-
-```bash
-npm start
-```
-
----
 
 ## 📈 Philosophy
 
