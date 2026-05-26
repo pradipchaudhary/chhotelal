@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-// import "./globals.css";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,15 +38,19 @@ export default function RootLayout({
       <body
         className={clsx(
           inter.variable,
-          "antialiased"
+          "antialiased bg-[#fef9f7]"
         )}
       >
+        {/* Header */}
+        <Header />
 
-        {/* 📦 Content Layer */}
-        <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Main Content */}
+        <main className="px-6 pt-32">
           {children}
-        </div>
+        </main>
 
+        {/* Footer */}
+        <Footer />
       </body>
     </html>
   );
