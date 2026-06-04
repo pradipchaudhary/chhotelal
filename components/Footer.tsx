@@ -81,7 +81,7 @@ export default function Footer() {
             </h3>
 
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/privacy" className="hover:text-black">Privacy Policy</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-black">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-black">Terms</Link></li>
               <li><Link href="/contact" className="hover:text-black">Contact</Link></li>
             </ul>
