@@ -28,18 +28,6 @@ Chhotelal is designed for developers who value clarity, efficiency, and scalabil
 
 ---
 
-## 📂 Project Structure
-
-```bash
-chhotelal/
-├── src/        # Application source code
-├── public/     # Static assets
-├── config/     # Configuration files
-├── docs/       # Documentation (optional)
-└── README.md
-```
-
----
 
 
 ## 📈 Philosophy
