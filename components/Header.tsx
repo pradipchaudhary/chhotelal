@@ -5,11 +5,11 @@ import { Search } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-6 py-4">
+    <header className="fixed top-0 left-0 w-full z-50 px-6 py-4 bg-white/60 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto">
 
         {/* Glass Navbar (Clean Version) */}
-        <div className="flex items-center justify-between backdrop-blur-xl bg-white/60 rounded-2xl px-6 py-4">
+        <div className="flex items-center justify-between px-6 py-4">
 
           {/* Logo (Bigger) */}
           <Link
