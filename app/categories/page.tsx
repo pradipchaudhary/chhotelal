@@ -7,131 +7,214 @@ import {
   Rocket,
   Layers3,
   ArrowRight,
+  Search,
+  TrendingUp,
 } from "lucide-react";
 
 const categories = [
   {
     name: "Next.js",
     count: 12,
-    description: "App Router, Server Components, SEO and deployment.",
-    icon: <Rocket size={24} />,
+    color: "from-black to-gray-700",
+    description:
+      "App Router, Server Components, SEO optimization and deployment.",
+    icon: Rocket,
     slug: "nextjs",
   },
   {
     name: "JavaScript",
     count: 18,
-    description: "Modern JavaScript concepts, tips and performance.",
-    icon: <Code2 size={24} />,
+    color: "from-yellow-500 to-orange-500",
+    description:
+      "Modern JavaScript concepts, performance, patterns and tips.",
+    icon: Code2,
     slug: "javascript",
   },
   {
     name: "React",
     count: 15,
-    description: "Hooks, architecture, patterns and best practices.",
-    icon: <Layers3 size={24} />,
+    color: "from-cyan-500 to-blue-600",
+    description:
+      "Hooks, architecture, state management and best practices.",
+    icon: Layers3,
     slug: "react",
   },
   {
-    name: "UI/UX",
+    name: "UI / UX",
     count: 9,
-    description: "Design systems, interfaces and user experience.",
-    icon: <Palette size={24} />,
+    color: "from-pink-500 to-purple-600",
+    description:
+      "Design systems, user interfaces and user experience.",
+    icon: Palette,
     slug: "ui-ux",
   },
 ];
 
 export default function CategoriesPage() {
   return (
-    <div className="w-full min-h-screen">
+    <main className="w-full min-h-screen">
 
       {/* Hero */}
-      <section className="max-w-3xl mx-auto text-center pt-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-          Categories
+      <section className="max-w-4xl mx-auto px-6 pt-16 text-center">
+        <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-gray-200 bg-white text-sm text-gray-600">
+          <TrendingUp size={14} />
+          Explore Topics
+        </span>
+
+        <h1 className="mt-6 text-5xl md:text-6xl font-bold tracking-tight text-gray-900">
+          Browse by
+          <span className="block bg-gradient-to-r from-black to-gray-500 bg-clip-text text-transparent">
+            Categories
+          </span>
         </h1>
 
-        <p className="mt-4 text-gray-600">
-          Explore articles grouped by technologies, design,
-          and development topics.
+        <p className="mt-5 text-lg text-gray-600 max-w-2xl mx-auto">
+          Discover articles, tutorials, coding guides, design insights
+          and development resources organized by topic.
         </p>
-      </section>
 
-      {/* Categories Grid */}
-      <section className="max-w-6xl mx-auto px-6 mt-14">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {/* Search */}
+        <div className="max-w-xl mx-auto mt-10 relative">
+          <Search
+            size={18}
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+          />
 
-          {categories.map((category) => (
-            <Link
-              key={category.slug}
-              href={`/categories/${category.slug}`}
-              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white/70 backdrop-blur-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-            >
-
-              {/* Gradient Glow */}
-              <div className="absolute -top-10 -right-10 h-24 w-24 rounded-full bg-gray-100 blur-2xl opacity-50" />
-
-              {/* Icon */}
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-gray-800">
-                {category.icon}
-              </div>
-
-              {/* Content */}
-              <div className="relative mt-5">
-                <h2 className="text-lg font-semibold text-gray-900">
-                  {category.name}
-                </h2>
-
-                <p className="mt-2 text-sm text-gray-600">
-                  {category.description}
-                </p>
-
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="text-xs text-gray-400">
-                    {category.count} Articles
-                  </span>
-
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </div>
-              </div>
-
-            </Link>
-          ))}
-
+          <input
+            type="text"
+            placeholder="Search categories..."
+            className="w-full pl-11 pr-4 py-4 rounded-2xl border border-gray-200 bg-white shadow-sm outline-none focus:ring-2 focus:ring-gray-300"
+          />
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="max-w-5xl mx-auto px-6 mt-20">
-        <div className="rounded-3xl border border-gray-200 bg-white/60 backdrop-blur-xl p-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      {/* Featured Category */}
+      <section className="max-w-6xl mx-auto px-6 mt-16">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-gray-800 p-10 text-white">
 
-            <div>
-              <h3 className="text-3xl font-bold">54+</h3>
-              <p className="text-sm text-gray-500 mt-1">Articles</p>
-            </div>
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,white,transparent_40%)]" />
 
-            <div>
-              <h3 className="text-3xl font-bold">4</h3>
-              <p className="text-sm text-gray-500 mt-1">Categories</p>
-            </div>
+          <div className="relative z-10">
+            <span className="text-sm text-gray-300">
+              Most Popular Category
+            </span>
 
-            <div>
-              <h3 className="text-3xl font-bold">10K+</h3>
-              <p className="text-sm text-gray-500 mt-1">Readers</p>
-            </div>
+            <h2 className="text-4xl font-bold mt-3">
+              JavaScript
+            </h2>
 
-            <div>
-              <h3 className="text-3xl font-bold">2026</h3>
-              <p className="text-sm text-gray-500 mt-1">Started</p>
-            </div>
+            <p className="mt-4 max-w-2xl text-gray-300">
+              Explore modern JavaScript concepts, ESNext features,
+              performance optimization, asynchronous programming,
+              and real-world development practices.
+            </p>
 
+            <Link
+              href="/categories/javascript"
+              className="inline-flex items-center gap-2 mt-6 px-5 py-3 rounded-xl bg-white text-black font-medium"
+            >
+              Explore Category
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
 
-    </div>
+      {/* Categories */}
+      <section className="max-w-6xl mx-auto px-6 mt-16">
+        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
+
+          {categories.map((category) => {
+            const Icon = category.icon;
+
+            return (
+              <Link
+                key={category.slug}
+                href={`/categories/${category.slug}`}
+                className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div
+                  className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${category.color}`}
+                />
+
+                <div
+                  className={`h-14 w-14 rounded-2xl bg-gradient-to-r ${category.color} flex items-center justify-center text-white`}
+                >
+                  <Icon size={24} />
+                </div>
+
+                <h3 className="mt-6 text-xl font-semibold text-gray-900">
+                  {category.name}
+                </h3>
+
+                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                  {category.description}
+                </p>
+
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-sm text-gray-500">
+                    {category.count} Articles
+                  </span>
+
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="max-w-6xl mx-auto px-6 mt-20">
+        <div className="grid md:grid-cols-4 gap-6">
+
+          {[
+            ["54+", "Articles"],
+            ["4", "Categories"],
+            ["10K+", "Readers"],
+            ["2026", "Started"],
+          ].map(([number, label]) => (
+            <div
+              key={label}
+              className="rounded-3xl border border-gray-200 bg-white p-8 text-center"
+            >
+              <h3 className="text-4xl font-bold">{number}</h3>
+              <p className="mt-2 text-gray-500">{label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="max-w-4xl mx-auto px-6 mt-24 pb-24">
+        <div className="rounded-3xl bg-gradient-to-r from-gray-900 to-black p-10 text-center text-white">
+
+          <h2 className="text-3xl font-bold">
+            Stay Updated
+          </h2>
+
+          <p className="mt-3 text-gray-300">
+            Get the latest articles, tutorials and developer insights
+            delivered directly to your inbox.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 mt-8 max-w-lg mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 rounded-xl text-black outline-none"
+            />
+
+            <button className="px-6 py-3 rounded-xl bg-white text-black font-medium">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
   );
 }
