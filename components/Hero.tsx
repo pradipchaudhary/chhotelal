@@ -23,7 +23,7 @@ export default function Hero() {
         {/* Badge */}
         <div className="flex justify-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white/70 backdrop-blur-md shadow-sm text-sm text-gray-700">
-            🇳🇵 Nepal's Modern Knowledge Hub
+            Nepal's Modern Knowledge Hub
           </div>
         </div>
 
@@ -92,40 +92,6 @@ export default function Hero() {
               <span className="text-sm font-medium text-gray-700">
                 {item.title}
               </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {[
-            {
-              number: "500+",
-              label: "Published Articles",
-            },
-            {
-              number: "50K+",
-              label: "Monthly Readers",
-            },
-            {
-              number: "25+",
-              label: "Categories",
-            },
-            {
-              number: "Daily",
-              label: "Fresh Updates",
-            },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-md border border-gray-200"
-            >
-              <h3 className="text-3xl font-bold text-gray-900">
-                {item.number}
-              </h3>
-              <p className="mt-2 text-sm text-gray-500">
-                {item.label}
-              </p>
             </div>
           ))}
         </div>
