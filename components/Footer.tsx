@@ -1,107 +1,174 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-gray-200 bg-white mt-24">
+    <footer className="relative mt-32 border-t border-zinc-200 bg-gradient-to-b from-white to-zinc-50 dark:from-zinc-950 dark:to-black dark:border-zinc-800">
 
-      <div className="max-w-6xl mx-auto px-6 py-14">
+      {/* Decorative Blur */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#ffa092] to-transparent" />
+
+      <div className="max-w-6xl mx-auto px-6 py-16">
 
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid gap-12 lg:grid-cols-12">
 
           {/* Brand */}
-          <div className="md:col-span-2">
-            <h2 className="text-lg font-semibold text-gray-900">
-              Chhotelal<span className="text-[#ffa092]">.</span>
-            </h2>
+          <div className="lg:col-span-5">
+            <Link
+              href="/"
+              className="inline-flex items-center text-xl font-bold tracking-tight"
+            >
+              Chhotelal
+              <span className="text-[#ffa092]">.</span>
+            </Link>
 
-            <p className="mt-3 text-sm text-gray-600 leading-relaxed max-w-md">
-              A personal blog focused on web development, JavaScript, Next.js,
-              UI/UX design, and modern software engineering practices.
-              Sharing practical knowledge and real-world insights.
+            <p className="mt-4 max-w-md text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+              A personal blog focused on web development, JavaScript,
+              Next.js, UI/UX design, and modern software engineering.
+              Sharing practical knowledge, tutorials, and real-world
+              experiences.
             </p>
 
-            {/* Social Links */}
-            <div className="mt-5 flex items-center gap-3">
+            {/* Social */}
+            <div className="mt-6 flex items-center gap-3">
 
               <a
                 href="https://github.com/your-username"
                 target="_blank"
-                className="text-gray-500 hover:text-black transition"
+                rel="noopener noreferrer"
+                className="group flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-black dark:border-zinc-700 dark:bg-zinc-900"
               >
-                <FaGithub size={18} />
+                <FaGithub className="text-zinc-600 group-hover:text-black dark:text-zinc-400 dark:group-hover:text-white" />
               </a>
 
               <a
                 href="https://linkedin.com/in/your-username"
                 target="_blank"
-                className="text-gray-500 hover:text-blue-600 transition"
+                rel="noopener noreferrer"
+                className="group flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-blue-500 dark:border-zinc-700 dark:bg-zinc-900"
               >
-                <FaLinkedin size={18} />
+                <FaLinkedin className="text-zinc-600 group-hover:text-blue-500 dark:text-zinc-400" />
               </a>
 
               <a
                 href="https://twitter.com/your-username"
                 target="_blank"
-                className="text-gray-500 hover:text-sky-500 transition"
+                rel="noopener noreferrer"
+                className="group flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-sky-500 dark:border-zinc-700 dark:bg-zinc-900"
               >
-                <FaTwitter size={18} />
+                <FaTwitter className="text-zinc-600 group-hover:text-sky-500 dark:text-zinc-400" />
               </a>
 
               <a
-                href="mailto:your@email.com"
-                className="text-gray-500 hover:text-red-500 transition"
+                href="mailto:hello@chhotelal.com"
+                className="group flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-red-500 dark:border-zinc-700 dark:bg-zinc-900"
               >
-                <HiOutlineMail size={18} />
+                <HiOutlineMail className="text-zinc-600 group-hover:text-red-500 dark:text-zinc-400" />
               </a>
 
             </div>
           </div>
 
           {/* Navigation */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-4">
+          <div className="lg:col-span-2">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-white">
               Navigation
             </h3>
 
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/" className="hover:text-black">Home</Link></li>
-              <li><Link href="/blogs" className="hover:text-black">Blogs</Link></li>
-              <li><Link href="/categories" className="hover:text-black">Categories</Link></li>
-              <li><Link href="/about" className="hover:text-black">About</Link></li>
+            <ul className="mt-5 space-y-3 text-sm">
+              <li>
+                <Link href="/" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/blogs" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link href="/categories" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                  Categories
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Resources */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-4">
+          <div className="lg:col-span-2">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-white">
               Resources
             </h3>
 
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/privacy-policy" className="hover:text-black">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-black">Terms</Link></li>
-              <li><Link href="/contact" className="hover:text-black">Contact</Link></li>
+            <ul className="mt-5 space-y-3 text-sm">
+              <li>
+                <Link href="/privacy-policy" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                  Terms
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                  Contact
+                </Link>
+              </li>
             </ul>
+          </div>
+
+          {/* CTA */}
+          <div className="lg:col-span-3">
+            <div className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              <h3 className="font-semibold text-zinc-900 dark:text-white">
+                Stay Updated
+              </h3>
+
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                Get the latest articles about Next.js, React, JavaScript,
+                and software engineering.
+              </p>
+
+              <Link
+                href="/contact"
+                className="mt-4 inline-flex rounded-xl bg-black px-4 py-2 text-sm text-white transition hover:opacity-90 dark:bg-white dark:text-black"
+              >
+                Subscribe →
+              </Link>
+            </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+        {/* Bottom */}
+        <div className="mt-14 border-t border-zinc-200 pt-6 dark:border-zinc-800">
 
-          <p>
-            © {new Date().getFullYear()} Chhotelal. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-3 text-center md:flex-row md:items-center md:justify-between">
 
-          <p>
-            Built with Next.js & Tailwind CSS
-          </p>
+            <p className="text-sm text-zinc-500">
+              © {new Date().getFullYear()} Chhotelal. All rights reserved.
+            </p>
+
+            <p className="text-sm text-zinc-500">
+              Crafted with ❤️ using Next.js 16 & Tailwind CSS 4
+            </p>
+
+          </div>
 
         </div>
-
       </div>
     </footer>
   );
